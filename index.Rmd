@@ -103,7 +103,7 @@ y <- ggplot(data = second_merge, mapping = aes(x = year, y = Log.GDP.per.capita,
   facet_wrap(~Regional.indicator) + 
   scale_x_continuous(breaks = 2010:2019) +
   theme(legend.position = 'none', strip.background = element_rect(colour = "black", fill = "white"), text = element_text(size=10)) +
-  labs(title = "Trends in GDP Per Capita (Logged) in 2010-2019", subtitle = "Western European Countries have a Higher GDP Per Capita", x = "Years (2010-2019)", y = "GDP Per Capita (Logged)", caption = "Data from the World Happiness Report")
+  labs(title = "Trends in GDP Per Capita (Natural Log) in 2010-2019", subtitle = "Western European Countries have a Higher GDP Per Capita", x = "Years (2010-2019)", y = "GDP Per Capita (Nautral Log)", caption = "Data from the World Happiness Report")
 ggplotly(y)
 ```
 
@@ -134,10 +134,10 @@ Similar to the GDP per capita graph, there are upward trends in the regions high
 ```{r fig.height = 11, fig.width = 15, echo = FALSE}
 
 fourth_graph <- world_2021%>%
-  ggplot(aes(x = `Logged GDP per capita`, y = `Ladder score`, color = `Regional indicator`, text=paste(`Country name`))) + 
+  ggplot(aes(x = `Logged GDP per capita`, y = `Ladder score`, color = `Regional indicator`, text=paste("Country name:",`Country name`))) + 
   geom_jitter() + 
   theme(text = element_text(size=12), legend.text = element_text(size = 10)) + 
-  labs(title= "A Comparison of Life Ladder Score and GDP Per Capita (Logged)", x = "GDP Per Capita (Logged)", y = "Life Ladder Score", caption = "Data from World Happiness Report 2021") 
+  labs(title= "A Comparison of Life Ladder Score and GDP Per Capita (Logged)", x = "GDP Per Capita (Natural Log)", y = "Life Ladder Score", caption = "Data from World Happiness Report 2021") 
 ggplotly(fourth_graph)
 
 ```
