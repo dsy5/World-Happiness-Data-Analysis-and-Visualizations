@@ -207,7 +207,7 @@ The freedom and social support scores signify the extent to which each statistic
 ```{r fig.height = 11, fig.width = 15, echo = FALSE}
 
 fifth_graph <- world_2021%>%
-  ggplot(aes(x = `Freedom to make life choices`, y = `Social support`, color = `Regional indicator`, text=paste(`Country name`))) + 
+  ggplot(aes(x = `Freedom to make life choices`, y = `Social support`, color = `Regional indicator`, text=paste("Country name:",`Country name`))) + 
   geom_jitter() + 
   theme(text = element_text(size=12), legend.text = element_text(size = 10)) + 
   labs(title= "A Comparison of Freedom of Life Choices and Social Support", x = "Freedom to Make Life Choices", y = "Social Support", caption = "Data from World Happiness Report 2021") 
