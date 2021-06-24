@@ -1,7 +1,21 @@
 ---
-title: "About this site"
+title: "About My Project"
 description: |
-  Some additional details about the website
+  Date Created: June 24th, 2021
+  
+  The World Happiness Report is a publication of data collected by the Gallup World Poll. Data collected consists of a variety of six different statistics, from GDP per capita to freedom to corruption. 
+  
+  Check out this website to learn more about the World Happiness Report: https://worldhappiness.report/
+  
+  In my first data science project, I wanted to visualize the massive amounts of data collected from the World Happiness Reports over the years in order to present the data in a user-friendly and understandable format. I used the programming language *R* to achieve my goals. 
+  
+  First, I found two datasets (CSVs) on Kaggle that contained data from the World Happiness Report 2021 as well as data from the World Happiness Report over past years. From that point, I began analyzing, cleaning, and forming creative and eye-catching graphics to illustrate facinating trends in the data. 
+  
+  Visit my GitHub repository to see the code behind my works: https://github.com/dsy5/World-Happiness-Data-Analysis-and-Visualizations.git
+  
+  *I created this project as part of my final project for a free data science bootcamp (https://bootcamp.davidkane.info/) I enrolled in during the Summer of 2021. The course covered the first three weeks in Harvard Preceptor David Kane's Gov 1005: Data class. In this bootcamp, I was first exposed to basic data science by learning R and GitHub.*
+  
+
 ---
 
 ```{r setup, include=FALSE}

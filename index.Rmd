@@ -7,7 +7,7 @@ description: |
   
   What is the Life Ladder Score?
   
-  The Life Ladder is based on the Cantril Scale (on a scale of 10), a higher life ladder score indicates a better life, while a lower score indicates a worse life
+  The Life Ladder is based on the Cantril Ladder Score (on a scale of 10), a higher life ladder score indicates a better life, while a lower score indicates a worse life.
 site: distill::distill_website
 ---
 
@@ -38,6 +38,7 @@ x1 <- world_2021%>%
 
   labs(title = "Mean GDP Per Capita by Region", subtitle = "Western Europe, North America and ANZ are both high in Mean GDP Per Capita", x = "Logged GDP Per Capita", y = "Mean Values", caption = "Data from World Happiness Report 2021") 
 ```
+
 ```{r, echo = FALSE}
 y1 <- world_2021%>%
   rename(country = 'Country name', region = 'Regional indicator', ladder = 'Ladder score', gdp = 'Logged GDP per capita', life_expec = 'Healthy life expectancy')%>%
@@ -162,6 +163,10 @@ For the following graphs, move your cursor on a point in the interactive visuali
 
 Double-click on a region in the legend to isolate specific points of that region on the graph. You can click on other regions to compare countries in different regions and their respective scores. 
 
+Double-click on the graph if you want to zoom out.
+
+In the first graph, I wanted to create a scatter plot with the life ladder scores and GDP per capita on one graph. I plotted each country and filled each point by region.  
+
 ```{r fig.height = 11, fig.width = 15, echo = FALSE}
 
 fourth_graph <- world_2021%>%
@@ -182,6 +187,8 @@ This graph can help contribute to a conclusion that countries in Western Europea
 
 </aside>
 
+The freedom and social support scores signify the extent to which each statistic impacted beneficial changes in life quality. I wanted to plot these scores for each country and fill each point by region.
+
 ```{r fig.height = 11, fig.width = 15, echo = FALSE}
 
 fifth_graph <- world_2021%>%
@@ -198,6 +205,6 @@ ggplotly(fifth_graph)
 
 Similar to the graph above, we can see that countries in Western Europe and North America and ANZ have more freedom to make life choices and have access to more social support. Countries in the bottom-left corner have less freedom and social support. 
 
-Countries in regions like South Asia are plotted all around the graph and are not strictly clustered like countries in Southeast Asia and North America and ANZ
+Countries in regions like South Asia are plotted all around the graph and are not strictly clustered like countries in Southeast Asia and North America and ANZ.
 
 </aside>
