@@ -1,13 +1,16 @@
 ---
 title: "World Happiness Report Data Analysis and Visualizations"
 description: |
-  Below are some exciting visualizations that represent data collected from World Happiness Reports
+  Below are some exciting visualizations that represent data collected from World Happiness Reports.
   
   Link to Source of Data: https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report-2021.csv
   
   What is the Life Ladder Score?
   
   The Life Ladder is based on the Cantril Ladder Score (on a scale of 10), a higher life ladder score indicates a better life, while a lower score indicates a worse life.
+  
+  *NOTE: The graphs are best viewed in landscape mode!*
+
 site: distill::distill_website
 ---
 
@@ -73,6 +76,7 @@ ggarrange(x1, y1, z1, nrow = 3)
 We can see that the regions of "North America and ANZ" and "Western Europe" dominate in mean life ladder scores, healthy life expectancy, and GDP per capita. 
 
 The regions of "Sub-Saharan Africa" and "South Asia" score low in the following statistics. 
+
 </aside>
 
 
@@ -105,7 +109,9 @@ ggplotly(y)
 
 In this graph, we can see that Western European countries have higher life ladder scores than countries that comprise the Commonwealth of Independent States, South Asia, and Southeast Asia. 
 
-We see an upward trend in Life Ladder scores in the countries of the Commonwealth of Independent States; however, the trend is inverse for South Asia. Southeast Asia and Western Europe look to be stable in their Life Ladder scores. 
+We see an upward trend in Life Ladder scores in the countries of the Commonwealth of Independent States; however, the trend is inverse for South Asia. 
+
+Southeast Asia and Western Europe seem to be stable in their Life Ladder scores over the 10 years. 
 
 </aside>
 
@@ -131,7 +137,9 @@ ggplotly(y)
 <aside>
 
 
-In this graph, we can see an upward trend in GDP per capita in all regions highlighted in the graph. Western European countries tend to have a higher GDP per capita.  
+In this graph, we can see an upward trend in GDP per capita in all regions highlighted in the graph. 
+
+Western European countries tend to have a higher GDP per capita.  
 </aside>
 
 
@@ -155,7 +163,11 @@ ggplotly(y)
 <aside>
 
 
-Similar to the GDP per capita graph, there are upward trends in the regions highlighted for the healthy life expectancy at birth statistic. Western European countries tend to have high, yet similar healthy life expectancy at birth statistics. We can also see that countries like Nepal and Kazakhstan have made significant jumps in this statistic. 
+Similar to the GDP per capita graph, there are upward trends in the regions highlighted for the healthy life expectancy at birth statistic. 
+
+Western European countries tend to have high, yet similar healthy life expectancy at birth statistics. 
+
+We can also see that countries like Nepal and Kazakhstan have made significant jumps in healthy life expectancy. 
 
 </aside>
 
@@ -181,7 +193,9 @@ ggplotly(fourth_graph)
 <aside>
 
 
-In this graph, we can see that countries in Western Europe have high GDP per capitas and high life ladder scores (as seen in the top-right corner of the graph). Countries in the bottom-left corner, including those from Sub-Saharan Africa and South Asia, have lower GDP per capitas and lower life ladder scores. 
+In this graph, we can see that countries in Western Europe have high GDP per capitas and high life ladder scores (as seen in the top-right corner of the graph). 
+
+Countries in the bottom-left corner, including those from Sub-Saharan Africa and South Asia, have lower GDP per capitas and lower life ladder scores. 
 
 This graph can help contribute to a conclusion that countries in Western European, North America, as well as Australia and New Zealand, tend to have a better quality of life compared to other countries of the world. 
 
@@ -203,7 +217,9 @@ ggplotly(fifth_graph)
 <aside>
 
 
-Similar to the graph above, we can see that countries in Western Europe and North America and ANZ have more freedom to make life choices and have access to more social support. Countries in the bottom-left corner have less freedom and social support. 
+Similar to the graph above, we can see that countries in Western Europe and North America and ANZ have more freedom to make life choices and have access to more social support. 
+
+Countries in the bottom-left corner have less freedom and social support. 
 
 Countries in regions like South Asia are plotted all around the graph and are not strictly clustered like countries in Southeast Asia and North America and ANZ.
 
