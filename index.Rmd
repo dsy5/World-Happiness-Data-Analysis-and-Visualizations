@@ -1,5 +1,5 @@
 ---
-title: "World Happiness Report Data Analysis"
+title: "World Happiness Report Data Analysis and Visualizations"
 description: |
   Welcome to the website. I hope you enjoy it!
 site: distill::distill_website
