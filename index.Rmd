@@ -1,13 +1,14 @@
 ---
-title: "World Happiness Report Data Analysis and Visualizations - Created by Dhruv Syngol"
+title: "Intriguing Visualizations of Data from World Happiness Reports"
 description: |
-  Below are some exciting visualizations that represent data collected from World Happiness Reports.
   
+  *A data science project, created by data scientist Dhruv Syngol, to visualize happiness data from a wide spectrum of countries*
+  
+  Below are some exciting visualizations that represent data collected from World Happiness Reports.
+ 
   Link to Source of Data: https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report-2021.csv
   
-  What is the Life Ladder Score?
-  
-  The Life Ladder is based on the Cantril Ladder Score (on a scale of 10), a higher life ladder score indicates a better life, while a lower score indicates a worse life.
+  Check out the *About* page to learn more about the data and the project. 
   
   *NOTE: The graphs are best viewed in landscape mode!*
 
