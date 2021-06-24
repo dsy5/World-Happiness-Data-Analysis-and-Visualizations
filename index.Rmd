@@ -1,0 +1,154 @@
+---
+title: "World Happiness Report Data Analysis"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: distill::distill_website
+---
+
+```{r setup, echo = FALSE}
+library(tidyverse)
+library(dplyr)
+library(plotly)
+library(gridExtra)
+library(ggpubr)
+
+```
+
+```{r fig.height = 14, fig.width = 14, echo = FALSE}
+world_happiness <- read_csv("~/Downloads/world-happiness-report.csv")
+world_2021 <- read_csv("~/Downloads/world-happiness-report-2021.csv")
+
+```
+
+```{r, echo = FALSE}
+x1 <- world_2021%>%
+  rename(country = 'Country name', region = 'Regional indicator', ladder = 'Ladder score', gdp = 'Logged GDP per capita', life_expec = 'Healthy life expectancy')%>%
+  select(country, region, ladder, gdp, life_expec)%>%
+  group_by(region)%>%
+  mutate(`Life Ladder` = mean(ladder), `GDP Per Capita` = mean(gdp), `Life Expectancy` = mean(life_expec))%>%
+  ggplot(aes(x=`GDP Per Capita`, y =fct_reorder(region, `GDP Per Capita`))) + 
+  geom_col(position = "dodge") + 
+    theme(text = element_text(size = 15)) +
+
+  labs(title = "Mean GDP Per Capita by Region", subtitle = "Western Europe, North America and ANZ are both high in Mean GDP Per Capita", x = "Logged GDP Per Capita", y = "Mean Values", caption = "Data from World Happiness Report 2021") 
+```
+```{r, echo = FALSE}
+y1 <- world_2021%>%
+  rename(country = 'Country name', region = 'Regional indicator', ladder = 'Ladder score', gdp = 'Logged GDP per capita', life_expec = 'Healthy life expectancy')%>%
+  select(country, region, ladder, gdp, life_expec)%>%
+  group_by(region)%>%
+  mutate(`Life Ladder` = mean(ladder), `GDP Per Capita` = mean(gdp), `Life Expectancy` = mean(life_expec))%>%
+  ggplot(aes(x=`Life Expectancy`, y =fct_reorder(region, `Life Expectancy`))) + 
+  geom_col(position = "dodge") + 
+    theme(text = element_text(size = 15)) +
+  labs(title = "Mean Healthy Life Expectancy by Region", subtitle = "Western Europe, North America, and ANZ lead World Regions", x = "Healthy Life Expectancy", y = "Region", caption = "Data from World Happiness Report 2021") 
+
+```
+
+```{r, echo = FALSE}
+z1 <- world_2021%>%
+  rename(country = 'Country name', region = 'Regional indicator', ladder = 'Ladder score', gdp = 'Logged GDP per capita', life_expec = 'Healthy life expectancy')%>%
+  select(country, region, ladder, gdp, life_expec)%>%
+  group_by(region)%>%
+  mutate(`Life Ladder` = mean(ladder), `GDP Per Capita` = mean(gdp), `Life Expectancy` = mean(life_expec))%>%
+  ggplot(aes(x=`Life Ladder`, y =fct_reorder(region, `Life Ladder`))) + 
+  geom_col(position = "dodge") + 
+  theme(text = element_text(size = 15)) +
+  labs(title = "Mean Life Ladder Scores by Region", subtitle = "North America and ANZ Leads All Regions", x = "Life Ladder Scores", y = "Region", caption = "Data from World Happiness Report 2021") 
+
+```
+```{r fig.height = 15, fig.width = 12, echo = FALSE}
+ggarrange(x1, y1, z1, nrow = 3)
+```
+
+
+```{r fig.height = 11, fig.width = 12, echo = FALSE}
+data_first <- read.csv("~/Downloads/archive/world-happiness-report-2021.csv")
+data_second <- read.csv("~/Downloads/archive/world-happiness-report.csv")
+data_first <- data_first%>%select(Country.name, Regional.indicator)
+merged <- merge(data_first, data_second, by = "Country.name", all = TRUE)
+first_merge <- merged%>%
+  group_by(Country.name)%>%
+  arrange(Country.name)%>%
+  na.omit(merged)%>%
+  filter(year >= 2010 & year <= 2019)%>%
+  filter(Regional.indicator %in% c("Southeast Asia", "Western Europe", "South Asia", "Commonwealth of Independent States"))
+y <- ggplot(data = first_merge, mapping = aes(x = year, y = Life.Ladder, color = Country.name)) + 
+  geom_line() + 
+  facet_wrap(~Regional.indicator) + 
+  scale_x_continuous(breaks = 2010:2019) +
+  theme(legend.position = 'none', strip.background = element_rect(colour = "black", fill = "white"), text = element_text(size=10)) +
+  labs(title = "Trends in Life Ladder Scores in 2010-2019", subtitle = "Western European Countries Have Higher Life Ladder Scores", x = "Years (2010-2019)", y = "Life Ladder Score", caption = "Data from the World Happiness Report")
+ggplotly(y)
+```
+
+
+
+
+In this graph, we can see that Western European countries have higher life ladder scores than countries that comprise the Commonwealth of Independent States, South Asia, and Southeast Asia. 
+
+We see an upward trend in Life Ladder scores in the countries of the Commonwealth of Independent States; however, the trend is inverse for South Asia. Southeast Asia and Western Europe look to be stable in their Life Ladder scores.       
+
+
+```{r fig.height = 11, fig.width = 12, echo = FALSE}
+second_merge <- merged%>%
+  group_by(Country.name)%>%
+  arrange(Country.name)%>%
+  na.omit(merged)%>%
+  filter(year >= 2010 & year <= 2019)%>%
+  filter(Regional.indicator %in% c("Southeast Asia", "Western Europe", "South Asia", "Commonwealth of Independent States"))
+
+y <- ggplot(data = second_merge, mapping = aes(x = year, y = Log.GDP.per.capita, color = Country.name)) + 
+  geom_line() + 
+  facet_wrap(~Regional.indicator) + 
+  scale_x_continuous(breaks = 2010:2019) +
+  theme(legend.position = 'none', strip.background = element_rect(colour = "black", fill = "white"), text = element_text(size=10)) +
+  labs(title = "Trends in GDP Per Capita (Logged) in 2010-2019", subtitle = "Western European Countries have a Higher GDP Per Capita", x = "Years (2010-2019)", y = "GDP Per Capita (Logged)", caption = "Data from the World Happiness Report")
+ggplotly(y)
+```
+
+
+In this graph, we can see an upward trend in GDP per capita in all regions highlighted in the graph. Western European countries tend to have a higher GDP per capita.  
+
+
+```{r fig.height = 11, fig.width = 12, echo = FALSE}
+third_merge <- merged%>%
+  group_by(Country.name)%>%
+  arrange(Country.name)%>%
+  na.omit(merged)%>%
+  filter(year >= 2010 & year <= 2019)%>%
+  filter(Regional.indicator %in% c("Southeast Asia", "Western Europe", "South Asia", "Commonwealth of Independent States"))
+y <- ggplot(data = third_merge, mapping = aes(x = year, y = Healthy.life.expectancy.at.birth, color = Country.name)) + 
+  geom_line() + 
+  facet_wrap(~Regional.indicator) + 
+  scale_x_continuous(breaks = 2010:2019) +
+  theme(legend.position = 'none', strip.background = element_rect(colour = "black", fill = "white"), text = element_text(size=10)) +
+  labs(title = "Trends in Healthy Life Expectancy at Birth in 2010-2019", subtitle = "Western European Countries have Higher Healthy Life Expectancy at Birth", x = "Years (2010-2019)", y = "Healthy Life Expectancy at Birth", caption = "Data from the World Happiness Report")
+ggplotly(y)
+
+```
+
+
+Similar to the GDP per capita graph, there are upward trends in the regions highlighted for the healthy life expectancy at birth statistic. Western European countries tend to have high, yet similar healthy life expectancy at birth statistics. We can also see that countries like Nepal and Kazakhstan have made significant jumps in this statistic. 
+
+```{r fig.height = 11, fig.width = 15, echo = FALSE}
+
+fourth_graph <- world_2021%>%
+  ggplot(aes(x = `Logged GDP per capita`, y = `Ladder score`, color = `Regional indicator`, text=paste(`Country name`))) + 
+  geom_jitter() + 
+  theme(text = element_text(size=12), legend.text = element_text(size = 10)) + 
+  labs(title= "A Comparison of Life Ladder Score and GDP Per Capita (Logged)", x = "GDP Per Capita (Logged)", y = "Life Ladder Score", caption = "Data from World Happiness Report 2021") 
+ggplotly(fourth_graph)
+
+```
+
+```{r fig.height = 11, fig.width = 15, echo = FALSE}
+
+fifth_graph <- world_2021%>%
+  ggplot(aes(x = `Freedom to make life choices`, y = `Social support`, color = `Regional indicator`, text=paste(`Country name`))) + 
+  geom_jitter() + 
+  theme(text = element_text(size=12), legend.text = element_text(size = 10)) + 
+  labs(title= "A Comparison of Freedom of Life Choices and Social Support", x = "Freedom to Make Life Choices", y = "Social Support", caption = "Data from World Happiness Report 2021") 
+ggplotly(fifth_graph)
+
+```

@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-23T19:42:05-05:00"
+    },
+    {
+      "path": "index.html",
+      "title": "World Happiness Report Data Analysis and Visualization",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-06-23T19:42:05-05:00"
+    }
+  ],
+  "collections": []
+}
