@@ -2,6 +2,7 @@
 title: "About My Project"
 description: |
   Date Created: June 24th, 2021
+  Data Scientist: Dhruv Syngol
   
   The World Happiness Report is a publication of data collected by the Gallup World Poll. Data collected consists of a variety of six different statistics, from GDP per capita to freedom to corruption. 
   
@@ -14,8 +15,6 @@ description: |
   Visit my GitHub repository to see the code behind my works: https://github.com/dsy5/World-Happiness-Data-Analysis-and-Visualizations.git
   
   *NOTE: The graphs are best viewed in landscape mode!*
-  
-  *I created this project as part of my final project for a free data science bootcamp (https://bootcamp.davidkane.info/) I enrolled in during the Summer of 2021. The course covered the first three weeks in Harvard Preceptor David Kane's Gov 1005: Data class. In this bootcamp, I was first exposed to basic data science by learning R and GitHub.*
   
 
 ---

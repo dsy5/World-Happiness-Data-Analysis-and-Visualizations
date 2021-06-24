@@ -1,5 +1,5 @@
 ---
-title: "World Happiness Report Data Analysis and Visualizations"
+title: "World Happiness Report Data Analysis and Visualizations - Created by Dhruv Syngol"
 description: |
   Below are some exciting visualizations that represent data collected from World Happiness Reports.
   
