@@ -2,16 +2,30 @@
 title: "Intriguing Visualizations of Data from World Happiness Reports"
 description: |
   
-  *A data science project, created by data scientist Dhruv Syngol, to visualize happiness data from a wide spectrum of countries*
+  *A data science project, created by Dhruv Syngol, to visualize happiness data from a wide spectrum of countries*
   
-  Below are some exciting visualizations that represent data collected from World Happiness Reports.
- 
+  *Date Created: June 24th, 2021*
+  
+  *Curated by: Dhruv Syngol*
+  
+  The World Happiness Report is a publication of data collected by the Gallup World Poll. Data collected consists of a variety of six different statistics, from GDP per capita to freedom to corruption.
+  
+    One statistic that the report collects is a **Life Ladder Score**. The life ladder score is based on the Cantril Ladder Score (on a scale of 10). A higher life ladder score indicates a better life while a lower score indicates a worse life.
+    
+    Also, the GDP per capitas in the graphs are the natural log of the real GDP per capitas of the countries. 
+
+  In my first data science project, I wanted to visualize the massive amounts of data collected from the World Happiness Reports over the years in order to present the data in a user-friendly and understandable format. I used the programming language *R* to achieve my goals. 
+  
+  First, I found two datasets (CSVs) on Kaggle that contained data from the World Happiness Report 2021 as well as data from the World Happiness Report over past years. From that point, I began analyzing, cleaning, and forming creative and eye-catching graphics to illustrate facinating trends in the data. 
+  
+  Visit my GitHub repository to see the code behind my works: https://github.com/dsy5/World-Happiness-Data-Analysis-and-Visualizations.git
+
   Link to Source of Data: https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report-2021.csv
   
-  Check out the *About* page to learn more about the data and the project. 
+  Check out this website to learn more about the World Happiness Report: https://worldhappiness.report/
   
   *NOTE: The graphs are best viewed in landscape mode!*
-
+  
 site: distill::distill_website
 ---
 

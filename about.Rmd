@@ -4,11 +4,11 @@ description: |
   
   *Date Created: June 24th, 2021*
   
-  *Data Scientist: Dhruv Syngol*
+  *Curated by: Dhruv Syngol*
   
-  The World Happiness Report is a publication of data collected by the Gallup World Poll. Data collected consists of a variety of six different statistics, from GDP per capita to freedom to corruption. 
+  The World Happiness Report is a publication of data collected by the Gallup World Poll. Data collected consists of a variety of six different statistics, from GDP per capita to freedom to corruption.
   
-    One statistic that the report collects is a life ladder score. The life ladder score is based on the Cantril Ladder Score (on a scale of 10). A higher life ladder score indicates a better life while a lower score indicates a worse life.
+    One statistic that the report collects is a **Life Ladder Score**. The life ladder score is based on the Cantril Ladder Score (on a scale of 10). A higher life ladder score indicates a better life while a lower score indicates a worse life.
 
   Check out this website to learn more about the World Happiness Report: https://worldhappiness.report/
   
